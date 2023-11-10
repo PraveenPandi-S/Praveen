@@ -1,0 +1,20 @@
+import java.util.*;
+Public class Questinno five{
+  Public static void main(String args[]);  
+    Scanner Sc =  new Scanner(System.in);
+       System.out.print (Enter the number of String);
+          int a=sc.next Int();
+        String st[]= new string[a];
+       for(int i=0;i<a;i++)
+{
+       St[i]=Sc.next;();
+        for (int i=0;i<a;i++);
+      Char c[] = Str[i];
+    St[i]=" ";
+        Arrays sort(c);
+     for (int i=c.length-1;i>=0;i--){
+        St[i] = St[i] + c[j];
+
+        }
+    }
+}
