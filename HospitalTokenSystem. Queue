@@ -1,0 +1,54 @@
+package Queue;
+	import java.util.LinkedList;
+	import java.util.Queue;
+	import java.util.Scanner;
+
+	class HospitalTokenSystem {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        Queue<String> tokenQueue = new LinkedList<>();
+
+	        while (true) {
+	            System.out.println("Hospital Token System Menu:");
+	            System.out.println("1. Generate Token");
+	            System.out.println("2. Process Token");
+	            System.out.println("3. Exit");
+	            System.out.print("Enter your choice: ");
+
+	            int choice = scanner.nextInt();
+
+	            switch (choice) {
+	                case 1:
+	                    generateToken(tokenQueue);
+	                    break;
+	                case 2:
+	                    processToken(tokenQueue);
+	                    break;
+	                case 3:
+	                    System.out.println("Exit Process ThankYou");
+	                    System.exit(0);
+	                default:
+	                    System.out.println("Invalid choice. Please enter valid option.");
+	            }
+	        }
+	    }
+
+	    private static void generateToken(Queue<String> tokenQueue) {
+	        System.out.print("Enter patient name: ");
+	        Scanner scanner = new Scanner(System.in);
+	        String patientName = scanner.nextLine();
+	        String token = "Token no " + (tokenQueue.size() + 1+" "+patientName);
+	        tokenQueue.add(token);
+	        System.out.println("Token generated successfully: " + token);
+	    }
+
+	    private static void processToken(Queue<String> tokenQueue) {
+	        if (!tokenQueue.isEmpty()) {
+	            String processedToken = tokenQueue.remove();
+	            System.out.println("Processing token: " + processedToken);
+	        } else 
+	        {
+	            System.out.println("No tokens to process. Queue is empty.");
+	        }
+	    }
+	}
