@@ -1,0 +1,60 @@
+package Chatbots;
+	import java.util.Scanner;
+	import java.util.Stack;
+
+	public class FastTrackRechargeApp {
+	    private static Stack<Double> balanceStack = new Stack<>();
+
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        System.out.println("FastTrack Recharge");
+
+	        while (true) {
+	            System.out.println("1. Check Balance");
+	            System.out.println("2. Recharge");
+	            System.out.println("3. Exit");
+	            System.out.print("Enter your choice: ");
+
+	            int choice = scanner.nextInt();
+	            scanner.nextLine(); 
+
+	            switch (choice) {
+	                case 1:
+	                    checkBalance();
+	                    break;
+	                case 2:
+	                    recharge();
+	                    break;
+	                case 3:
+	                    System.out.println(" Thank You For Using FastTrack: Goodbye!");
+	                    System.exit(0);
+	                    break;
+	                default:
+	                    System.out.println("Invalid choice. Please enter a valid option.");
+	            }
+	        }
+	   }
+
+	    private static void checkBalance() {
+	        if (balanceStack.isEmpty()) {
+	            System.out.println("Your FastTrack balance is empty. Please recharge.");
+	        } else 
+	        {
+	            System.out.println("Your FastTrack balance: " + balanceStack.peek());
+	        }
+	    }	
+
+	    private static void recharge() {
+	        Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Enter the recharge amount: ");
+	        double rechargeAmount = scanner.nextDouble();
+	        balanceStack.push(rechargeAmount);
+
+	        System.out.println("Recharge successful! Your FastTrack balance is now: " + balanceStack.peek());
+	    }
+	}
+
+
+
